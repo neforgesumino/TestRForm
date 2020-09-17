@@ -1,2 +1,2 @@
 # TestRForm
-React App Test
+App Test
