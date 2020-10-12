@@ -5,22 +5,19 @@ export default class TodoInput extends Component {
         const {item, handleChange, handleSubmit, editItem} = this.props  
         
         return (
-            <div className="form-holder">
+            <div className="card card-body my-3">
                 <form onSubmit={handleSubmit}>
                     <div className="input-group">
-                        { /* Doesn't work in last versions of B.
                         <div className="input-group-prepend">
                             <div className="input-group-text bg-info text-white">
-                                <i className="fa fa-book" />
+                                <i className="fas fa-book" />
                             </div>
-                        </div> */}
+                        </div>
 
-                        
-                        <span>Let's</span>
                         <input
                             type="text"
-                            className="form-input"
-                            placeholder="plan new task"
+                            className="form-control"
+                            placeholder="New Todo"
                             value={item}
                             onChange={handleChange}
                         />
@@ -28,9 +25,9 @@ export default class TodoInput extends Component {
 
                     <button 
                         type="submit"
-                        className="input-group_btn"
+                        className={`btn btn-block mt-3 ${editItem ? 'btn-success' : 'btn-info'}`}
                     >
-                        {editItem ? 'Edit task' : 'Add new task'} 
+                        {editItem ? 'Edit task' : 'Add new task'}
                     </button>
                 </form>
             </div>

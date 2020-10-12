@@ -49,7 +49,8 @@ export default class TodoList extends Component {
                     </div>
                 </div>
 
-                { items.length === 0 ? '' :
+                {
+                items.length === 0 ? '' :
                     <ul className="list-group my-5">
                         {
                             items.map(item => {

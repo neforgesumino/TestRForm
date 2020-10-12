@@ -1,8 +1,7 @@
 import React, { Component } from 'react'
-import uuid from 'uuid'
+import uuid from 'uuid/v4'
 import TodoInput from './components/TodoInput'
 import TodoList from './components/TodoList'
-import './index.scss'
 
 class App extends Component {
 	constructor(props) {
@@ -62,6 +61,7 @@ class App extends Component {
 
 	handleDelete = id => {
 		const filteredItems = this.state.items.filter(item => item.id !== id)
+
 		this.setState({
 			items: filteredItems
 		})
@@ -69,7 +69,9 @@ class App extends Component {
 
 	handleEdit = id => {
 		const filteredItems = this.state.items.filter(item => item.id !== id)
+
 		const selectedItem = this.state.items.find(item => item.id === id)
+
 		this.setState({
 			items: filteredItems,
 			id: id,
@@ -80,6 +82,7 @@ class App extends Component {
 
 	handleDeleteDoneTasks = () => {
 		const filteredItems = this.state.items.filter(item => item.completed === false)
+
 		this.setState({
 			items: filteredItems
 		})
@@ -93,6 +96,7 @@ class App extends Component {
 
 	render() {
 		let items = []
+
 		if (this.state.itemsToShow === "all") {
 			items = this.state.items;
 		} else if (this.state.itemsToShow === "todo") {
@@ -102,9 +106,10 @@ class App extends Component {
 		}
 
 		return (
-			    <div className="todolist-container">
-					<div className="todolist_table">
-						<h3 className="todolist_table__title">Drop your task!</h3>
+			<div className="container">
+				<div className="row">
+					<div className="col-10 col-md-8 mx-auto mt-4">
+						<h3 className="text-capitalize text-center">TodoInput</h3>
 						<TodoInput
 							item={this.state.item}
 							handleChange={this.handleChange}
@@ -122,8 +127,9 @@ class App extends Component {
 						/>
 					</div>
 				</div>
-			);
-		}
+			</div>
+		);
 	}
+}
 
 export default App;
