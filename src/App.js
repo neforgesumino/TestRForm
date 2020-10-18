@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import uuid from 'uuid/v4'
+import './components/FontawesomeIcons/index'
 import TodoInput from './components/TodoInput'
 import TodoList from './components/TodoList'
 

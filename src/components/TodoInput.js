@@ -1,3 +1,4 @@
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import React, { Component } from 'react'
 
 export default class TodoInput extends Component {
@@ -10,7 +11,7 @@ export default class TodoInput extends Component {
                     <div className="input-group">
                         <div className="input-group-prepend">
                             <div className="input-group-text bg-info text-white">
-                                <i className="fas fa-book" />
+                                <FontAwesomeIcon icon="book"/>
                             </div>
                         </div>
 

@@ -13,19 +13,19 @@ export default class TodoItem extends Component {
                         className={`mx-2 ${completed ? 'text-success' : 'text-secondary'}`}
                         onClick={() => handleDoneTask(id)}
                     >
-                        <i className={`${completed ? 'far fa-check-square' : 'far fa-square'}`} />
+                        <FontAwesomeIcon icon={`${completed ? 'checksquare' : 'square'}`} />
                     </span>
                     <span 
                         className="mx-2 text-warning"
                         onClick={handleEdit}
                     >
-                        <i className="fas fa-pen" />
+                        <FontAwesomeIcon  icon="pen" />
                     </span>
                     <span 
                         className="mx-2 text-danger"
                         onClick={handleDelete}
                     >
-                        <i className="fas fa-trash" />
+                        <FontAwesomeIcon icon="trash" />
                     </span>
                 </div>
             </li>
